@@ -48,7 +48,6 @@ public class Main {
                 "CVE":Cabo Verde,
                 "PAB":Panamá,
                 "PEN":Perú,
-                "PGK":Papúa Nueva Guinea,
                 """);
 
         do {
