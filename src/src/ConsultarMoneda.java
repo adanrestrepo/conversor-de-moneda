@@ -43,7 +43,15 @@ public class ConsultarMoneda {
                     throw new RuntimeException("Error desconocido al obtener la tasa de cambio desde el servicio❌");
                 }
             }
-            return gson.fromJson(responseBody, Moneda.class);
+
+            //obtener la tasa de cambio
+            if (jsonResponse.has("conversion_rate")){
+                double conversionRate = jsonResponse.get("conversion_rate").getAsDouble();
+               return new Moneda(from, to, conversionRate);
+            }else {
+                throw new RuntimeException("❌ Error: No se encontró 'conversion_rate' en la respuesta.");
+            }
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);

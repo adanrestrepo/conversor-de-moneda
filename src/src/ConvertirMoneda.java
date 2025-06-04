@@ -9,7 +9,8 @@ public class ConvertirMoneda {
         double cantidadConvertida;
 
         try {
-            Moneda moneda = consulta.buscarMoneda(from, to);
+            Moneda moneda;
+            moneda = consulta.buscarMoneda(from, to);
             if (moneda == null) {
                 System.out.println("Error: No se pudo encontrar información para la conversión de " + from + " a " + to + ".");
                 return;
@@ -28,9 +29,9 @@ public class ConvertirMoneda {
                 return;
             }
 
-            cantidadConvertida = cantidad * moneda.getConversionRate();
+            cantidadConvertida = cantidad * moneda.conversionRate();
             System.out.println("\n📈 La tasa de conversión de hoy para " + to + ":");
-            System.out.println(" 1 " + from + " = " + moneda.getConversionRate());
+            System.out.println(" 1 " + from + " = " + moneda.conversionRate());
             System.out.println(cantidad + " " + from + " = " + cantidadConvertida + " " + to);
 
         } catch (RuntimeException e) {
