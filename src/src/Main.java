@@ -49,7 +49,6 @@ public class Main {
                 "PAB":Panamá,
                 "PEN":Perú,
                 "PGK":Papúa Nueva Guinea,
-                "XCG":Oro (onza troy) - No es un país,
                 """);
 
         do {
